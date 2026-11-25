@@ -75,7 +75,7 @@ _internvl_transform = T.Compose([
 ])
 
 # InternVL image preprocessing (ImageNet normalisation, 448px tiles) follows the
-# InternVL model card / repository (OpenGVLab, MIT License). See THIRD_PARTY_NOTICES.md.
+# InternVL model card / repository (OpenGVLab, MIT License). See README.md.
 def load_image_internvl(path):
     return _internvl_transform(Image.open(path)).unsqueeze(0)
 

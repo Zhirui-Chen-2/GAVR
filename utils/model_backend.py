@@ -771,7 +771,7 @@ def _internvl_pv_from_pil(img: Image.Image) -> torch.Tensor:
 
 def _internvl_find_closest_aspect_ratio(aspect_ratio, target_ratios, width,
                                         height, image_size):
-    """From the InternVL demo code (MIT License). See THIRD_PARTY_NOTICES.md."""
+    """From the InternVL demo code (MIT License). See README.md."""
     best_ratio_diff = float('inf')
     best_ratio = (1, 1)
     area = width * height
@@ -790,7 +790,7 @@ def _internvl_find_closest_aspect_ratio(aspect_ratio, target_ratios, width,
 def _internvl_dynamic_preprocess(image: Image.Image, min_num=1, max_num=12,
                                  image_size=448, use_thumbnail=True):
     """InternVL dynamic tiling, from the InternVL demo code (MIT License). See
-    THIRD_PARTY_NOTICES.md. Only used when MM_NATIVE_RES=1."""
+    README.md. Only used when MM_NATIVE_RES=1."""
     orig_width, orig_height = image.size
     aspect_ratio = orig_width / orig_height
     target_ratios = set(

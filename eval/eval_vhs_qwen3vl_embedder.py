@@ -2,7 +2,7 @@
 VHs retrieval R@1 using Qwen3-VL-Embedding (hs=10 by default).
 
 Contains code modified from QwenLM/Qwen3-VL-Embedding and qwen-vl-utils
-(Apache License 2.0). See THIRD_PARTY_NOTICES.md.
+(Apache License 2.0). See README.md.
 
 For each of 1000 VHs-large samples:
   1. Build haystack (pos + neg + COCO fillers, seed=42)
@@ -82,7 +82,7 @@ class _EmbeddingOutput(ModelOutput):
 
 class Qwen3VLForEmbedding(Qwen3VLPreTrainedModel):
     """Modified from Qwen3VLForEmbedding in QwenLM/Qwen3-VL-Embedding,
-    src/models/qwen3_vl_embedding.py (Apache License 2.0). See THIRD_PARTY_NOTICES.md."""
+    src/models/qwen3_vl_embedding.py (Apache License 2.0). See README.md."""
     config: Qwen3VLConfig
 
     def __init__(self, config):
@@ -135,7 +135,7 @@ def _smart_resize_image(img: Image.Image, factor: int = 32,
                         min_pixels: int = MIN_PIXELS, max_pixels: int = MAX_PIXELS) -> Image.Image:
     """Resize so both sides are multiples of `factor` and the pixel count lies in
     [min_pixels, max_pixels], keeping the aspect ratio. Reimplements the rule of
-    qwen-vl-utils (Apache License 2.0). See THIRD_PARTY_NOTICES.md."""
+    qwen-vl-utils (Apache License 2.0). See README.md."""
     import math
     h, w = img.height, img.width
     h_bar = max(factor, round(h / factor) * factor)

@@ -79,4 +79,22 @@ python experiments/mcq_gavr.py --model qwen3vl-4b --datasets "$mcq" --mode gavr 
 
 ## License and attribution
 
-See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for code attribution and the terms of the external models and datasets.
+See [LICENSE](LICENSE) for the MIT terms and [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt) for the Apache 2.0 terms.
+
+| where | origin | license | changes |
+|---|---|---|---|
+| Model backends, extraction, retrieval-head analysis, and bundled ranking assets | [parkquasar/Image-Retrieval-Heads](https://github.com/parkquasar/Image-Retrieval-Heads) | MIT | adapted for GAVR |
+| `utils/conversation.py` | [OpenGVLab/InternVL](https://github.com/OpenGVLab/InternVL), `internvl_chat/internvl/conversation.py`, itself modified from [lm-sys/FastChat](https://github.com/lm-sys/FastChat) | MIT and Apache-2.0 | header added |
+| `utils/model_utils.py` `load_image_internvl`, `utils/model_backend.py` `_internvl_*` image helpers | InternVL demo code | MIT | adapted |
+| `eval/eval_vhs_qwen3vl_embedder.py` `Qwen3VLForEmbedding` and pooling | [QwenLM/Qwen3-VL-Embedding](https://github.com/QwenLM/Qwen3-VL-Embedding), `src/models/qwen3_vl_embedding.py` | Apache-2.0 | modified |
+| `eval/eval_vhs_qwen3vl_embedder.py` `_smart_resize_image` | qwen-vl-utils in [QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL) | Apache-2.0 | reimplemented |
+| `eval/eval_vhs_external_retrievers.py`, the 80 prompt templates | [openai/CLIP](https://github.com/openai/CLIP) | MIT | none |
+
+## Models and data
+
+These are not included here and are used under their own terms.
+
+- Models: InternVL3.5, Qwen3-VL, Qwen3-VL-Embedding and SigLIP (Apache-2.0), CLIP (MIT).
+- Visual Haystacks (MIT).
+- MS-COCO 2017: annotations under CC BY 4.0, images under the Flickr Terms of Use.
+- ICIR-MCQ: see its [data card](https://huggingface.co/datasets/jerryray/ICIR-MCQ).
